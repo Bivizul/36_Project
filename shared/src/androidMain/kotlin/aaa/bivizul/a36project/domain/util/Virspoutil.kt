@@ -2,15 +2,15 @@
 
 package aaa.bivizul.a36project.domain.util
 
-import aaa.bivizul.a36project.domain.util.Virspocon
-import aaa.bivizul.a36project.domain.util.Virspocon.VIRSPOACTIVITY
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
+import android.net.Uri
 import android.telephony.TelephonyManager
+import androidx.browser.customtabs.CustomTabsIntent
 import com.onesignal.OneSignal
 import kotlinx.coroutines.Dispatchers
 import java.text.SimpleDateFormat
@@ -90,10 +90,25 @@ actual fun sigVirspooff() {
     OneSignal.disablePush(true)
 }
 
-actual fun getVirspoact(virspoact: Any, virspourl: String) {
-    val activity = virspoact as Activity
-    val virspoc = Class.forName(VIRSPOACTIVITY)
-    val virspoi = Intent(activity, virspoc)
-    val put = virspoi.putExtra(Virspocon.VIRSPOKOR, virspourl)
-    activity.startActivity(put)
+internal actual fun getVirspoactoff(virspocon: Any) {
+    val virspoa = virspocon as Activity
+    virspoa.finish()
+    System.exit(0)
+}
+
+internal actual fun virspoct(virspocon: Any, virspocc: String) {
+    val context = virspocon as Context
+    val virspoa = (context as? Activity)
+    val virspopn = "com.android.chrome"
+    val virspob = CustomTabsIntent.Builder()
+        .setShowTitle(false)
+        .setInstantAppsEnabled(true)
+        .build()
+    if (virspopn != null) {
+        virspob.intent.setPackage(virspopn)
+        virspob.launchUrl(context, Uri.parse(virspocc))
+    } else {
+        val i = Intent(Intent.ACTION_VIEW, Uri.parse(virspocc))
+        virspoa?.startActivity(i)
+    }
 }

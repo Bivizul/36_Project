@@ -13,4 +13,5 @@ internal expect fun getVirspot(): String
 internal expect fun getVirspodlg(virspocon: Any)
 internal expect fun checkVirsponet(virspocon: Any): Boolean
 internal expect fun sigVirspooff()
-internal expect fun getVirspoact(virspoact: Any, virspourl: String)
+internal expect fun getVirspoactoff(virspocon: Any)
+internal expect fun virspoct(virspocon: Any, virspocc: String)

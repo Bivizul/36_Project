@@ -34,7 +34,8 @@ fun SettingsContent(
         )
         Row(
             modifier = modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceAround
+            horizontalArrangement = Arrangement.SpaceAround,
+            verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
                 text = "Notifications",

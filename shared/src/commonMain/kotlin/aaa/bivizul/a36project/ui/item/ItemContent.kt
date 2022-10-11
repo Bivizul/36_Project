@@ -1,6 +1,6 @@
 package aaa.bivizul.a36project.ui.item
 
-import aaa.bivizul.a36project.ui.stoploswidget.Virspocp
+import aaa.bivizul.a36project.ui.virspowidget.Virspocp
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize

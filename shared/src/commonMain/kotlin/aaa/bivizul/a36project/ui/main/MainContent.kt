@@ -7,12 +7,11 @@ import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.scale
+import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 
@@ -29,7 +28,7 @@ fun MainContent(
             contentDescription = "Settings",
             modifier = modifier
                 .clickable { component.onClickSettingsModel() }
-                .align(Alignment.TopEnd),
+                .align(Alignment.TopStart),
         )
         Column(
             modifier = modifier.fillMaxSize(),
@@ -38,30 +37,19 @@ fun MainContent(
         ) {
             Text(
                 text = VIRSPOAN,
-                modifier = modifier,
+                modifier = modifier
+                    .rotate(-30f),
+                style = MaterialTheme.typography.h2,
+                textAlign = TextAlign.Center
+            )
+            Text(
+                text = "Go Go Go",
+                modifier = modifier
+                    .clickable { component.onClickListModel() }
+                    .rotate(-30f),
                 style = MaterialTheme.typography.h3,
                 textAlign = TextAlign.Center
             )
-            Row(
-                modifier = modifier
-                    .clickable { component.onClickListModel() }
-                    .padding(16.dp),
-                horizontalArrangement = Arrangement.spacedBy(48.dp),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(
-                    text = "Begin",
-                    modifier = modifier,
-                    style = MaterialTheme.typography.h4,
-                    textAlign = TextAlign.Center
-                )
-                Icon(
-                    imageVector = Icons.Filled.ArrowForward,
-                    contentDescription = null,
-                    modifier = modifier
-                        .scale(2f)
-                )
-            }
         }
     }
 }

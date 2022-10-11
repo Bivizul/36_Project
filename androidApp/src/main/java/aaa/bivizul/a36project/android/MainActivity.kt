@@ -54,9 +54,9 @@ fun MyApplicationTheme(
         )
     )
     val shapes = Shapes(
-        small = RoundedCornerShape(4.dp),
-        medium = RoundedCornerShape(4.dp),
-        large = RoundedCornerShape(0.dp)
+        small = RoundedCornerShape(8.dp),
+        medium = RoundedCornerShape(16.dp),
+        large = RoundedCornerShape(24.dp)
     )
 
     MaterialTheme(

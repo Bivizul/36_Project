@@ -1,4 +1,4 @@
-package aaa.bivizul.a36project.ui.stoploswidget
+package aaa.bivizul.a36project.ui.virspowidget
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize

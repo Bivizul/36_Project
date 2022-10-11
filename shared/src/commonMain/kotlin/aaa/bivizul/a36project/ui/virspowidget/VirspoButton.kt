@@ -1,6 +1,7 @@
-package aaa.bivizul.a36project.ui.stoploswidget
+package aaa.bivizul.a36project.ui.virspowidget
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.MaterialTheme
@@ -19,15 +20,16 @@ fun VirspoButton(
 
     Button(
         onClick = onClick,
-        modifier = modifier,
+        modifier = modifier.fillMaxWidth(),
         elevation = ButtonDefaults.elevation(),
-        shape = MaterialTheme.shapes.small,
-        border = BorderStroke(3.dp, MaterialTheme.colors.onPrimary)
+        shape = MaterialTheme.shapes.medium,
+        border = BorderStroke(6.dp, MaterialTheme.colors.onPrimary)
     ) {
         Text(
             text = text,
-            textAlign = TextAlign.Center,
-            style = MaterialTheme.typography.h6
+            modifier = modifier.fillMaxWidth(),
+            textAlign = TextAlign.Start,
+            style = MaterialTheme.typography.h5
         )
     }
 

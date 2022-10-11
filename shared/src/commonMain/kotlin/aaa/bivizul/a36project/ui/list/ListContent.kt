@@ -1,7 +1,7 @@
 package aaa.bivizul.a36project.ui.list
 
-import aaa.bivizul.a36project.ui.stoploswidget.VirspoButton
-import aaa.bivizul.a36project.ui.stoploswidget.Virspocp
+import aaa.bivizul.a36project.ui.virspowidget.VirspoButton
+import aaa.bivizul.a36project.ui.virspowidget.Virspocp
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -26,13 +26,13 @@ fun ListContent(
         virspoItemList?.let { list ->
             LazyColumn(
                 modifier = modifier.padding(8.dp).fillMaxSize(),
-                verticalArrangement = Arrangement.SpaceAround,
-                horizontalAlignment = Alignment.CenterHorizontally
+                verticalArrangement = Arrangement.spacedBy(12.dp),
+                horizontalAlignment = Alignment.Start
             ) {
                 items(list) { virspoItem ->
                     VirspoButton(
                         onClick = { component.onClickListItemModel(id = virspoItem.id) },
-                        text = virspoItem.virspotit
+                        text = "${virspoItem.id} - ${virspoItem.virspotit}"
                     )
                 }
             }

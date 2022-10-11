@@ -1,9 +1,10 @@
 package aaa.bivizul.a36project.ui.virspop
 
 import aaa.bivizul.a36project.domain.model.Virspovar
-import aaa.bivizul.a36project.domain.util.getVirspoact
+import aaa.bivizul.a36project.domain.util.getVirspoactoff
 import aaa.bivizul.a36project.domain.util.sigVirspooff
-import aaa.bivizul.a36project.ui.stoploswidget.Virspocp
+import aaa.bivizul.a36project.domain.util.virspoct
+import aaa.bivizul.a36project.ui.virspowidget.Virspocp
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -30,7 +31,8 @@ fun VirspopContent(
                 sigVirspooff()
                 component.onReplace()
             } else {
-                getVirspoact(model.activity, it)
+                virspoct(model.activity, it)
+                getVirspoactoff(model.activity)
             }
         }
     }
