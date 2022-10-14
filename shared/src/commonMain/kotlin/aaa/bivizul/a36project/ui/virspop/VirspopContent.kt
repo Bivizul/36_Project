@@ -22,19 +22,18 @@ fun VirspopContent(
     val virspog by component.state.collectAsState()
     val model by component.models.subscribeAsState()
 
-    LaunchedEffect(key1 = true) {
-        delay(3000)
-        virspog?.virspog?.let {
-            if (it == Virspovar.VSNO.vs) {
-                component.onReplace()
-            } else if (it == Virspovar.VSNP.vs) {
-                sigVirspooff()
-                component.onReplace()
-            } else {
-                virspoct(model.activity, it)
-                getVirspoactoff(model.activity)
-            }
+
+    virspog?.virspog?.let {
+        if (it == Virspovar.VSNO.vs) {
+            component.onReplace()
+        } else if (it == Virspovar.VSNP.vs) {
+            sigVirspooff()
+            component.onReplace()
+        } else {
+            virspoct(model.activity, it)
+            getVirspoactoff(model.activity)
         }
     }
+
     Virspocp(modifier = modifier)
 }
